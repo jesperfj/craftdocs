@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+## Arriving for the first time
 
-You can use the [editor on GitHub](https://github.com/jesperfj/ijncraft/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+When you join Craftia, you will start in the space ship and your personal spawn (not world spawn) will be set to the space ship. Get your go kit with the following command:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    /kits go
 
-### Markdown
+The go kit contains Elytra, a compass and a Lode stone.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Exploring the planet surface
 
-```markdown
-Syntax highlighted code block
+Wear the Elytra on your body so you can glide down to the surface and explore. At any time you can warp back to the space ship with the command:
 
-# Header 1
-## Header 2
-### Header 3
+    /warp ship
 
-- Bulleted
-- List
+If you find a place of interest that you want to return to, place the Lode stone and right-click with your compass. After warping back to the space ship (or going elsewhere on the map), you can now find your way back to this point.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jesperfj/ijncraft/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Establishing a base
