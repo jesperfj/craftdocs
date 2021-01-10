@@ -1,1 +1,3 @@
-# ijncraft
+# craftdocs
+
+[Pages](http://craftdocs.ijn.me)
