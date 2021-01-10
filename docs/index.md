@@ -32,7 +32,9 @@ As you establish a base on the planet surface, it may become important to protec
 * Move to the opposing corner and mark it with `//pos2`
 * Claim the region with `/region claim <name-of-region>`
 
-You may need to build up or dig down to position yourself correctly and fully capture the region you want to protect. See below for more details on regions.
+You may need to build up or dig down to position yourself correctly. See below for more details on regions. You can only have one region. If you change your mind and want to establish a base somewhere else, you need to delete the region you created and create a new one in another place. Delete your region with:
+
+    /region delete <name-of-your-region>
 
 ## Warping to your base
 
@@ -70,9 +72,26 @@ to expand your region 10 blocks upwards or
 
     //expand vert -10
 
-to expand downwards 10 blocks. You can use `//contract` in a similar way. Once you have modified your selected area, it's important that you now actually redefine your region:
+to expand downwards 10 blocks (you can use any other number). You can use `//contract` in a similar way. Once you have modified your selected area, it's important that you now actually redefine your region:
 
     /region redefine <name-of-your-region>
 
 This is the command that actually sets the new dimensions of the region so don't forget it.
 
+### Add members to your region
+
+When you claim a region, you are the region's owner and nobody else can break or place blocks in the region. If you want another explorer to share access to your region you can add them as a member:
+
+    /region addmember <name-of-your-region> <name-of-user>
+
+You can remove them with 
+
+    /region removemember <name-of-your-region> <name-of-user>
+
+### Restrict Chest Access in your region
+
+When you claim your region, only you and its members can open and close doors and break blocks. This means you can easily protect your base and prevent others from accessing chests by keeping them behind closed doors.
+
+But if you forgot to close the door, then a stranger can walk in and open your chests. You can protect you chests with the following command:
+
+    /region flag <name-of-your-region> -g nonmembers chest-access deny
