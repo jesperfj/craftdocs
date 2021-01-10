@@ -26,41 +26,54 @@ You can get as many go kits as you want. This enables you to mark many places of
 
 ## Establish a base
 
-As you establish a base on the planet surface, it may become important to protect it from other explorers. Explorers have been know to raid other bases. The space ship has a force field protection system that allows each explorer to protect a cuboid area of up to 30,000 blocks. Create a force field protection around your base in the following way:
+You can establish a base that is protected from other explorers. When you've found a good spot for your base, run the command:
 
-* Stand at one corner of your base and mark it with `//pos1`
-* Move to the opposing corner and mark it with `//pos2`
-* Claim the region with `/region claim <name-of-region>`
+    /setbase
 
-You may need to build up or dig down to position yourself correctly. See below for more details on regions. You can only have one region. If you change your mind and want to establish a base somewhere else, you need to delete the region you created and create a new one in another place. Delete your region with:
-
-    /region delete <name-of-your-region>
-
-## Warping to your base
-
-The space ship warp system allows each explorer to mark the coordinates of their home base and warp directly to their base from the space ship. When you are standing in your base, mark your coordinates with:
-
-    /sethome
-
-Once this is set, you can now warp to your base from the space ship with the command:
+This will create a based that stretches 30 blocks in each direction (including vertically) from where you are standing. Your location with be set as the home warp point. You can warp to this location from the space ship with the command:
 
     /warphome
 
-You can only warp to your base from the space ship. If you are somewhere else on the planet surface and want to go to your base, first warp to the ship and then warp to your base from there.
+Other explorers can walk onto your base but they cannot break blocks or open doors, so you can protect yourself and your chests by building a house and keeping the door closed. You can remove your base with the command:
 
-## Managing your region
+    /removebase
 
-To see what's part of your region, you can move around the map and run the command:
+This allows you to create a new base somewhere else.
+
+## Advanced commands
+
+Your base is protected using a WorldGuard region. You can use advanced commands to modify the region, the location of the warp point and decide whether strangers are able to open doors and chests. You can also add and remove other explorers as members of your region.
+
+### Select a new area and redefine your region
+
+You can use any of the [WorldEdit selection commands](https://worldedit.enginehub.org/en/latest/usage/regions/selections/) to select an area of the map and then redefine the region of your base. For example you can use `pos` commands like this:
+
+* Mark one corner by standing on it and running the command `//pos1`
+* Mark the opposing corner by standing on it and running the command `//pos2`
+* Claim the region with `/region claim <name-of-region>`. This only works if you don't already have a region/base
+* If you already have a region, you can redefine it to the new area with `/region redefine <name-of-region>`
+
+### Delete a region with a custom name
+
+`/removebase` expects the name of your region to be "<username>base". If you have given your region another name with `/region claim` then delete it with:
+
+    /region delete <name-of-your-region>
+
+### Inspect your region
+
+To see details about your region, stand inside the region and run the command:
 
     /region info
 
-If this command shows the name of your region and its details, it means you're inside your region. If it fails or showes something else e.g. `__global__` then you're outside your region. Use this command to see what is inside and outside of your region.
+If the command shows details about the `__global__` region, then you are not standing inside your region.
 
-To change the shape of your region, start by selecting your region:
+### Adjust the shape of your region
+
+If you want to make small adjustments to your region area, you can first select the current region:
 
     /region select <name-of-your-region>
 
-Now you can change the shape of the region using any of the [WorldEdit selection commands](https://worldedit.enginehub.org/en/latest/usage/regions/selections/). For example, you can expand the region in one direction with the `//expand` command:
+Now you can change the shape of the region using `//expand` and `//contract` commands:
 
     //expand 4 west
 
@@ -72,7 +85,7 @@ to expand your region 10 blocks upwards or
 
     //expand vert -10
 
-to expand downwards 10 blocks (you can use any other number). You can use `//contract` in a similar way. Once you have modified your selected area, it's important that you now actually redefine your region:
+to expand downwards 10 blocks (you can use any other number). `//contract` works in a similar way. Once you have modified your selected area, it's important that you now actually redefine your region:
 
     /region redefine <name-of-your-region>
 
@@ -95,3 +108,7 @@ When you claim your region, only you and its members can open and close doors an
 But if you forgot to close the door, then a stranger can walk in and open your chests. You can protect you chests with the following command:
 
     /region flag <name-of-your-region> -g nonmembers chest-access deny
+
+Turn chest access back on with
+
+    /region flag <name-of-your-region> -g nonmembers chest-access allow
